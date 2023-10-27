@@ -8,17 +8,24 @@
 import Foundation
 
 class ExperiencesViewModel{
-    var reloadCollectionView: (() -> Void)?
-    
+    var reloadRecommendedCollectionView: (() -> Void)?
+
+    var reloadRecentCollectionView: (() -> Void)?
+
     var experienceViewModels = [ExperienceViewModel](){
         didSet{
-            reloadCollectionView?()
+            reloadRecommendedCollectionView?()
+        }
+    }
+    
+    var recentExperienceViewModels = [ExperienceViewModel](){
+        didSet{
+            reloadRecentCollectionView?()
         }
     }
     
     
      func getRecommendedExperiences() {
-        var result:[Datum] = []
         APIManager.getRecommendedExperiences {[weak self] experiences, error in
             if error != nil {
                 print(error ?? "ERROR")
@@ -26,7 +33,7 @@ class ExperiencesViewModel{
                 if let experiences = experiences{
                     
                     if(experiences.count > 0){
-                        self?.changeDatumToViewModels(datum: experiences)
+                        self?.experienceViewModels = self!.changeDatumToViewModels(datum: experiences)
                     }                }
             }
             
@@ -34,12 +41,29 @@ class ExperiencesViewModel{
         
     }
     
-    func changeDatumToViewModels(datum: [Datum]){
+    func getRecentExperiences() {
+       APIManager.getRecentExperiences {[weak self] experiences, error in
+           if error != nil {
+               print(error ?? "ERROR")
+           }else{
+               if let experiences = experiences{
+                   
+                   if(experiences.count > 0){
+                       self?.recentExperienceViewModels = self!.changeDatumToViewModels(datum: experiences)
+                   }                }
+           }
+           
+       }
+       
+   }
+    
+    func changeDatumToViewModels(datum: [Datum])->[ExperienceViewModel]{
         var result = [ExperienceViewModel]()
         for data in datum{
             result.append(ExperienceViewModel(experience: data))
         }
-        experienceViewModels = result
+//        experienceViewModels = result
+        return result
     }
     
 }

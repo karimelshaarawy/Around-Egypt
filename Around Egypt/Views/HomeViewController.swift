@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var recommendedCollectionView: UICollectionView!
     
+    @IBOutlet weak var mostRecentCollectionView: UICollectionView!
     var experiences: ExperiencesViewModel = ExperiencesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,21 @@ class HomeViewController: UIViewController {
         recommendedCollectionView.delegate = self
         recommendedCollectionView.dataSource = self
         experiences.getRecommendedExperiences()
-        experiences.reloadCollectionView = { [weak self] in
+        experiences.reloadRecommendedCollectionView = { [weak self] in
             DispatchQueue.main.async {
                 self?.recommendedCollectionView.reloadData()
             }
         }
+        experiences.getRecentExperiences()
+        experiences.reloadRecentCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.mostRecentCollectionView.reloadData()
+            }
+        }
+        
+        mostRecentCollectionView.register(RecommendedExperienceCollectionViewCell.nib, forCellWithReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier)
+        mostRecentCollectionView.delegate = self
+        mostRecentCollectionView.dataSource = self
     }
     
 
@@ -38,18 +49,31 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return experiences.experienceViewModels.count
+        if collectionView == recommendedCollectionView{
+            return experiences.experienceViewModels.count}
+        else{
+            return experiences.recentExperienceViewModels.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = recommendedCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
-        cell.fetchDataFromViewModel(experience: experiences.experienceViewModels[indexPath.row])
-        return cell
+        
+        if collectionView == recommendedCollectionView{
+            let cell = recommendedCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
+            cell.fetchDataFromViewModel(experience: experiences.experienceViewModels[indexPath.row])
+            return cell
+        }
+        
+        else{
+            let cell = mostRecentCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
+            cell.fetchDataFromViewModel(experience:experiences.recentExperienceViewModels[indexPath.row])
+            return cell}
     }
+
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 340, height: 200)
     }
-    
-    
 }
+    

@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqT-0o-MEF">
-                                                <rect key="frame" x="19" y="16" width="112" height="22"/>
+                                                <rect key="frame" x="19" y="16" width="355" height="22"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended Experiences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d54-2s-fH5">
-                                                <rect key="frame" x="19" y="121" width="310.66666666666669" height="22"/>
+                                                <rect key="frame" x="19" y="121" width="355" height="22"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -100,10 +100,42 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Recent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9G-Gz-j7e">
+                                                <rect key="frame" x="19" y="397" width="355" height="22"/>
+                                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-Tw-aRZ">
+                                                <rect key="frame" x="19" y="427" width="355" height="565"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YCl-IV-rVM">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LJs-IO-qyo" customClass="RecommendedExperienceCollectionViewCell" customModule="Around_Egypt" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uYv-F4-0I4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="J9G-Gz-j7e" secondAttribute="trailing" constant="19" id="0cJ-eA-cgH"/>
+                                            <constraint firstItem="uhv-Tw-aRZ" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="2gS-SE-kWJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="uhv-Tw-aRZ" secondAttribute="trailing" constant="19" id="48W-xd-SwH"/>
                                             <constraint firstItem="IDt-dh-N6W" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="4fv-LA-asA"/>
+                                            <constraint firstItem="J9G-Gz-j7e" firstAttribute="top" secondItem="Qul-hU-Ppj" secondAttribute="bottom" constant="30" id="58a-kK-m7g"/>
+                                            <constraint firstAttribute="trailing" secondItem="d54-2s-fH5" secondAttribute="trailing" constant="19" id="5Bp-FA-xX9"/>
+                                            <constraint firstItem="uhv-Tw-aRZ" firstAttribute="top" secondItem="J9G-Gz-j7e" secondAttribute="bottom" constant="8" symbolic="YES" id="Ai9-33-fWo"/>
                                             <constraint firstItem="rqT-0o-MEF" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="Aon-Uh-2wK"/>
                                             <constraint firstItem="Qul-hU-Ppj" firstAttribute="top" secondItem="d54-2s-fH5" secondAttribute="bottom" constant="24" id="DsW-Tg-zEq"/>
                                             <constraint firstItem="d54-2s-fH5" firstAttribute="top" secondItem="IDt-dh-N6W" secondAttribute="bottom" constant="30" id="Kc0-4t-JqD"/>
@@ -113,7 +145,10 @@
                                             <constraint firstItem="Qul-hU-Ppj" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="Sq2-kO-4vk"/>
                                             <constraint firstItem="d54-2s-fH5" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="TSU-bU-MjE"/>
                                             <constraint firstAttribute="trailing" secondItem="IDt-dh-N6W" secondAttribute="trailing" constant="19" id="WLB-Kn-iey"/>
+                                            <constraint firstAttribute="trailing" secondItem="rqT-0o-MEF" secondAttribute="trailing" constant="19" id="aoH-1c-NZq"/>
                                             <constraint firstItem="rqT-0o-MEF" firstAttribute="top" secondItem="I88-zC-NOl" secondAttribute="top" constant="16" id="gwD-Zg-w0V"/>
+                                            <constraint firstAttribute="bottom" secondItem="uhv-Tw-aRZ" secondAttribute="bottom" constant="8" id="qPe-Lq-QZn"/>
+                                            <constraint firstItem="J9G-Gz-j7e" firstAttribute="leading" secondItem="I88-zC-NOl" secondAttribute="leading" constant="19" id="qY8-me-aa9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -145,6 +180,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mostRecentCollectionView" destination="uhv-Tw-aRZ" id="eCb-Ad-tvj"/>
                         <outlet property="recommendedCollectionView" destination="Qul-hU-Ppj" id="3MG-rg-AK9"/>
                     </connections>
                 </viewController>
