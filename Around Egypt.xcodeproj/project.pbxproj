@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */; };
 		FF691CB12AEA96A20065C6CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */; };
-		FF691CB32AEA96A20065C6CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB22AEA96A20065C6CF /* ViewController.swift */; };
+		FF691CB32AEA96A20065C6CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB22AEA96A20065C6CF /* HomeViewController.swift */; };
 		FF691CB62AEA96A20065C6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF691CB42AEA96A20065C6CF /* Main.storyboard */; };
 		FF691CB92AEA96A20065C6CF /* Around_Egypt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB72AEA96A20065C6CF /* Around_Egypt.xcdatamodeld */; };
 		FF691CBB2AEA96A40065C6CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF691CBA2AEA96A40065C6CF /* Assets.xcassets */; };
 		FF691CBE2AEA96A40065C6CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF691CBC2AEA96A40065C6CF /* LaunchScreen.storyboard */; };
+		FF691CC72AEBB9960065C6CF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FF691CC62AEBB9960065C6CF /* Alamofire */; };
+		FF691CCA2AEBB9B20065C6CF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF691CC92AEBB9B20065C6CF /* Kingfisher */; };
+		FF691CCC2AEBB9E30065C6CF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CCB2AEBB9E30065C6CF /* APIManager.swift */; };
+		FF691CCF2AEBBC390065C6CF /* ExperiencesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CCE2AEBBC390065C6CF /* ExperiencesRequest.swift */; };
+		FF691CD12AEBE0460065C6CF /* Gotham Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF691CD02AEBE0450065C6CF /* Gotham Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF691CAB2AEA96A20065C6CF /* Around Egypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Around Egypt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF691CB22AEA96A20065C6CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF691CB22AEA96A20065C6CF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF691CB52AEA96A20065C6CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF691CB82AEA96A20065C6CF /* Around_Egypt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Around_Egypt.xcdatamodel; sourceTree = "<group>"; };
 		FF691CBA2AEA96A40065C6CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF691CBD2AEA96A40065C6CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF691CBF2AEA96A40065C6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF691CCB2AEBB9E30065C6CF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FF691CCE2AEBBC390065C6CF /* ExperiencesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesRequest.swift; sourceTree = "<group>"; };
+		FF691CD02AEBE0450065C6CF /* Gotham Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF691CCA2AEBB9B20065C6CF /* Kingfisher in Frameworks */,
+				FF691CC72AEBB9960065C6CF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +68,35 @@
 		FF691CAD2AEA96A20065C6CF /* Around Egypt */ = {
 			isa = PBXGroup;
 			children = (
+				FF691CD22AEBE12E0065C6CF /* Fonts */,
+				FF691CCD2AEBBBF00065C6CF /* Models */,
 				FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */,
 				FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */,
-				FF691CB22AEA96A20065C6CF /* ViewController.swift */,
+				FF691CB22AEA96A20065C6CF /* HomeViewController.swift */,
 				FF691CB42AEA96A20065C6CF /* Main.storyboard */,
 				FF691CBA2AEA96A40065C6CF /* Assets.xcassets */,
 				FF691CBC2AEA96A40065C6CF /* LaunchScreen.storyboard */,
 				FF691CBF2AEA96A40065C6CF /* Info.plist */,
 				FF691CB72AEA96A20065C6CF /* Around_Egypt.xcdatamodeld */,
+				FF691CCB2AEBB9E30065C6CF /* APIManager.swift */,
 			);
 			path = "Around Egypt";
+			sourceTree = "<group>";
+		};
+		FF691CCD2AEBBBF00065C6CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF691CCE2AEBBC390065C6CF /* ExperiencesRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF691CD22AEBE12E0065C6CF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FF691CD02AEBE0450065C6CF /* Gotham Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +115,10 @@
 			dependencies = (
 			);
 			name = "Around Egypt";
+			packageProductDependencies = (
+				FF691CC62AEBB9960065C6CF /* Alamofire */,
+				FF691CC92AEBB9B20065C6CF /* Kingfisher */,
+			);
 			productName = "Around Egypt";
 			productReference = FF691CAB2AEA96A20065C6CF /* Around Egypt.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +147,10 @@
 				Base,
 			);
 			mainGroup = FF691CA22AEA96A20065C6CF;
+			packageReferences = (
+				FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = FF691CAC2AEA96A20065C6CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +168,7 @@
 				FF691CBE2AEA96A40065C6CF /* LaunchScreen.storyboard in Resources */,
 				FF691CBB2AEA96A40065C6CF /* Assets.xcassets in Resources */,
 				FF691CB62AEA96A20065C6CF /* Main.storyboard in Resources */,
+				FF691CD12AEBE0460065C6CF /* Gotham Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF691CB32AEA96A20065C6CF /* ViewController.swift in Sources */,
+				FF691CB32AEA96A20065C6CF /* HomeViewController.swift in Sources */,
 				FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */,
+				FF691CCC2AEBB9E30065C6CF /* APIManager.swift in Sources */,
+				FF691CCF2AEBBC390065C6CF /* ExperiencesRequest.swift in Sources */,
 				FF691CB92AEA96A20065C6CF /* Around_Egypt.xcdatamodeld in Sources */,
 				FF691CB12AEA96A20065C6CF /* SceneDelegate.swift in Sources */,
 			);
@@ -362,6 +402,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF691CC62AEBB9960065C6CF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		FF691CC92AEBB9B20065C6CF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FF691CB72AEA96A20065C6CF /* Around_Egypt.xcdatamodeld */ = {
