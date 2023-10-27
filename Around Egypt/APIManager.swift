@@ -12,12 +12,13 @@ class APIManager{
     
    private static let recommendedUrl = "https://aroundegypt.34ml.com/api/v2/experiences?filter[recommended]=true"
     
-    static func getRecommendedExperiences(){
+    static func getRecommendedExperiences(completion: @escaping (_ experiences: [Datum]?,_ error: Error?)-> Void){
         
         
         AF.request(recommendedUrl,method: .get,parameters: nil,encoding: URLEncoding.default).response{ response in
             guard response.error == nil else{
                 print(response.error?.localizedDescription)
+                completion(nil,response.error)
                 return
             }
             
@@ -29,10 +30,10 @@ class APIManager{
             do {
                 let decoder = JSONDecoder()
                 let experiences = try decoder.decode(ExperiencesRequest.self, from: data)
-                print(experiences)
+                completion(experiences.data,nil)
 
             } catch let error{
-                print(error)
+                completion(nil,error)
             }
             
         }
