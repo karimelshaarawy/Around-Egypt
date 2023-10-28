@@ -9,7 +9,9 @@ import SwiftUI
 import Kingfisher
 
 struct ExperienceMainPage: View {
-    var experience: ExperienceViewModel
+        
+    @ObservedObject var experience: ExperienceViewModel
+    var reload: (()->Void)?
     var body: some View {
         GeometryReader{ geometry in
             VStack(alignment: .leading, spacing: 15){ ZStack{ KFImage(URL(string: experience.coverPhoto)).resizable()
@@ -42,8 +44,12 @@ struct ExperienceMainPage: View {
                     }
                     Button (action:
                         {
-                            print("Button")
-                    }){
+                        experience.addLike {
+                            if let reload = reload{
+                                reload()
+                            }
+                        }
+                        }){
                         Image( experience.isLiked ?
                                "like" : "unlike")
                     }
@@ -58,8 +64,10 @@ struct ExperienceMainPage: View {
             
         }
         
+        
     }
 }
+
 
 struct ExperienceMainPage_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,16 +7,16 @@
 
 import Foundation
 
-class ExperienceViewModel{
+class ExperienceViewModel: ObservableObject{
 
     var id: String
     var title: String
     var coverPhoto: String
     var description: String
-    var noOfLikes: Int
+   @Published var noOfLikes: Int
     var recommended: Int
     var viewsNumber: Int
-    var isLiked: Bool
+   @Published var isLiked: Bool = false
     var address: String
     
     
@@ -28,7 +28,6 @@ class ExperienceViewModel{
         noOfLikes = experience.likesNo ?? 0
         recommended = experience.recommended ?? 0
         viewsNumber = experience.viewsNo ?? 0
-        isLiked = false
         address = (experience.city?.name ?? "" ) + ", Egypt"
     }
     
@@ -50,7 +49,7 @@ class ExperienceViewModel{
         if(isLiked == false){
             APIManager.postLikeRequest(id: id) {[weak self] likes, error in
                 if(error == nil){
-                    self?.isLiked = true
+                    self!.isLiked = true
                     if let likes = likes{
                         self?.noOfLikes = likes
                         reload()

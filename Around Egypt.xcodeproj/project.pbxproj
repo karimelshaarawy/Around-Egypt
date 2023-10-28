@@ -91,6 +91,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FF1DFB512AEDAF1D002D8680 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FF691CCB2AEBB9E30065C6CF /* APIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FF1DFB522AEDAF35002D8680 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */,
+				FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		FF691CA22AEA96A20065C6CF = {
 			isa = PBXGroup;
 			children = (
@@ -112,18 +129,15 @@
 		FF691CAD2AEA96A20065C6CF /* Around Egypt */ = {
 			isa = PBXGroup;
 			children = (
+				FF1DFB522AEDAF35002D8680 /* Delegates */,
+				FF1DFB512AEDAF1D002D8680 /* Managers */,
 				FF691CDC2AEC16DF0065C6CF /* ViewModels */,
 				FF691CD32AEC10170065C6CF /* Views */,
 				FF691CD22AEBE12E0065C6CF /* Fonts */,
 				FF691CCD2AEBBBF00065C6CF /* Models */,
-				FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */,
-				FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */,
-				FF691CB42AEA96A20065C6CF /* Main.storyboard */,
 				FF691CBA2AEA96A40065C6CF /* Assets.xcassets */,
-				FF691CBC2AEA96A40065C6CF /* LaunchScreen.storyboard */,
 				FF691CBF2AEA96A40065C6CF /* Info.plist */,
 				FF691CB72AEA96A20065C6CF /* Around_Egypt.xcdatamodeld */,
-				FF691CCB2AEBB9E30065C6CF /* APIManager.swift */,
 			);
 			path = "Around Egypt";
 			sourceTree = "<group>";
@@ -150,6 +164,8 @@
 		FF691CD32AEC10170065C6CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF691CB42AEA96A20065C6CF /* Main.storyboard */,
+				FF691CBC2AEA96A40065C6CF /* LaunchScreen.storyboard */,
 				FF691CD82AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift */,
 				FF691CD92AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.xib */,
 				FF691CE12AEC28C90065C6CF /* HomeViewController.swift */,

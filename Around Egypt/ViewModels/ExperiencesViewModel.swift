@@ -91,7 +91,21 @@ class ExperiencesViewModel{
    }
     
     func getSearchedForExperiences(searchWord:String) {
-       APIManager.getSearchedExperiences(searchText: searchWord){[weak self] experiences, error in
+        var searchedForArr = [Experience]()
+        do{
+            let request = Experience.fetchRequest()
+            let pred = NSPredicate(format: "title CONTAINS[cd] %@", searchWord)
+            request.predicate = pred
+            searchedForArr = try context.fetch(request)
+            
+        }catch{
+            
+        }
+        if(searchedForArr.count>0){
+            experienceViewModels = changeExperienceToViewModels(datum: searchedForArr)
+        }
+        
+        APIManager.getSearchedExperiences(searchText: searchWord){[weak self] experiences, error in
            if error != nil {
                print(error ?? "ERROR")
            }else{

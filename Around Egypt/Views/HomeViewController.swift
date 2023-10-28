@@ -83,11 +83,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == recommendedCollectionView{
-            let vc = ExperienceMainPage(experience: experiences.experienceViewModels[indexPath.row])
+            var vc = ExperienceMainPage(experience: experiences.experienceViewModels[indexPath.row])
+            vc.reload = recommendedCollectionView.reloadData
             let hostingController = UIHostingController(rootView: vc)
             self.present(hostingController, animated: true)
         }else{
-            let vc = ExperienceMainPage(experience: experiences.recentExperienceViewModels[indexPath.row])
+            var vc = ExperienceMainPage(experience: experiences.recentExperienceViewModels[indexPath.row])
+            vc.reload = mostRecentCollectionView.reloadData
             let hostingController = UIHostingController(rootView: vc)
             self.present(hostingController, animated: true)        }
 
