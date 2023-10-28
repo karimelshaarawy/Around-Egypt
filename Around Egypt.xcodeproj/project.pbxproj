@@ -25,6 +25,7 @@
 		FF691CE22AEC28C90065C6CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE12AEC28C90065C6CF /* HomeViewController.swift */; };
 		FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */; };
 		FF691CE72AEC78530065C6CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE62AEC78530065C6CF /* SearchViewController.swift */; };
+		FF691CE92AED11EA0065C6CF /* LikePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE82AED11EA0065C6CF /* LikePostResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		FF691CDF2AEC24350065C6CF /* ExperiencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewModel.swift; sourceTree = "<group>"; };
 		FF691CE12AEC28C90065C6CF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF691CE62AEC78530065C6CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF691CE82AED11EA0065C6CF /* LikePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePostResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				FF691CCE2AEBBC390065C6CF /* ExperiencesRequest.swift */,
+				FF691CE82AED11EA0065C6CF /* LikePostResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				FF691CDA2AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift in Sources */,
 				FF691CE02AEC24360065C6CF /* ExperiencesViewModel.swift in Sources */,
 				FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */,
+				FF691CE92AED11EA0065C6CF /* LikePostResponse.swift in Sources */,
 				FF691CCC2AEBB9E30065C6CF /* APIManager.swift in Sources */,
 				FF691CE22AEC28C90065C6CF /* HomeViewController.swift in Sources */,
 				FF691CCF2AEBBC390065C6CF /* ExperiencesRequest.swift in Sources */,

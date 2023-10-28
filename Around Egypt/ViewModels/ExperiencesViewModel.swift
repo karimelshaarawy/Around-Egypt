@@ -74,6 +74,7 @@ class ExperiencesViewModel{
        }
        
    }
+   
     
     func changeDatumToViewModels(datum: [Datum])->[ExperienceViewModel]{
         var result = [ExperienceViewModel]()

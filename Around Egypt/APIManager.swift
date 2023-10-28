@@ -15,6 +15,7 @@ class APIManager{
     
     private static let searchUrl = "https://aroundegypt.34ml.com/api/v2/experiences?filter[title]="
 
+    private static let likeUrl = "https://aroundegypt.34ml.com/api/v2/experiences/"
     
     
     
@@ -101,7 +102,34 @@ class APIManager{
     }
     
 
+    static func postLikeRequest(id: String,completion: @escaping (_ likes: Int?,_ error: Error?)-> Void){
+        
+        let url = likeUrl + id + "/like"
+        
+        AF.request(url,method: .post,parameters: nil,encoding: JSONEncoding.default).response{ response in
+            guard response.error == nil else{
+                print(response.error?.localizedDescription)
+                completion(nil,response.error)
+                return
+            }
+            
+            guard let data = response.data else{
+                print("Couldn't get data from API")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let likes = try decoder.decode(LikePostResponse.self, from: data)
+                completion(likes.data,nil)
 
+            } catch let error{
+                completion(nil,error)
+            }
+            
+        }
+    }
+    
 }
 
 

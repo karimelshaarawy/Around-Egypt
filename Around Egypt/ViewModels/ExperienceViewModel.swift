@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExperienceViewModel{
+class ExperienceViewModel{
 
     var id: String
     var title: String
@@ -29,6 +29,23 @@ struct ExperienceViewModel{
         viewsNumber = experience.viewsNo ?? 0
         isLiked = false
     }
+    
+    
+    func addLike(reload:@escaping()->Void)->Void{
+        if(isLiked == false){
+            APIManager.postLikeRequest(id: id) {[weak self] likes, error in
+                if(error == nil){
+                    self?.isLiked = true
+                    if let likes = likes{
+                        self?.noOfLikes = likes
+                        reload()
+                    }
+                    
+                }
+            }
+        }
+    }
+    
     
 }
 

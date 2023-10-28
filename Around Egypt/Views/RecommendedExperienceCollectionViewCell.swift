@@ -18,6 +18,10 @@ class RecommendedExperienceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recomendedImageView: UIImageView!
     @IBOutlet weak var viewsLabel: UILabel!
     
+    var postLike: ((@escaping ()->Void) -> Void)?
+    var reload: (() -> Void)?
+
+    
     static let identifier = "RecommendedExperienceCollectionViewCell"
     static var nib : UINib{
         return UINib(nibName: identifier , bundle: nil)
@@ -33,10 +37,18 @@ class RecommendedExperienceCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(with: URL(string: experience.coverPhoto))
         locationNameLabel.text = experience.title
         likesNumberLabel.text = "\(experience.noOfLikes)"
-        likeButton.imageView?.image = experience.isLiked ? UIImage(named: "options") : UIImage(named: "like")
+        likeButton.imageView?.image = experience.isLiked ? UIImage(named: "like") : UIImage(named: "unlike")
         viewsLabel.text = "\(experience.viewsNumber)"
         recomendedImageView.image = experience.recommended == 1 ? UIImage(named: "star") : UIImage(named: "")
+        postLike = experience.addLike
         
     }
+    
+    @IBAction func postLikeAction(_ sender: Any) {
+        if let postLike = postLike{
+            postLike(reload!)
 
+        }
+    }
+    
 }

@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         searchBar.text = searchText
         initializeCollectionView()
-        // Do any additional setup after loading the view.
+        initializeHideKeyboard()
     }
     func initializeCollectionView(){
         searchCollectionView.delegate = self
@@ -48,6 +48,7 @@ extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSou
         
             let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
             cell.fetchDataFromViewModel(experience: experiences.experienceViewModels[indexPath.row])
+        cell.reload = searchCollectionView.reloadData
             return cell
         
     }
@@ -68,5 +69,18 @@ extension SearchViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         experiences.getSearchedForExperiences(searchWord: searchBar.text ?? "")
+    }
+    func initializeHideKeyboard(){
+    //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+    target: self,
+    action: #selector(dismissMyKeyboard))
+    //Add this tap gesture recognizer to the parent view
+    view.addGestureRecognizer(tap)
+    }
+    @objc func dismissMyKeyboard(){
+    //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+    //In short- Dismiss the active keyboard.
+    view.endEditing(true)
     }
 }

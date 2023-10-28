@@ -63,12 +63,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == recommendedCollectionView{
             let cell = recommendedCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
             cell.fetchDataFromViewModel(experience: experiences.experienceViewModels[indexPath.row])
+            cell.reload = recommendedCollectionView.reloadData
             return cell
         }
         
         else{
             let cell = mostRecentCollectionView.dequeueReusableCell(withReuseIdentifier: RecommendedExperienceCollectionViewCell.identifier, for: indexPath) as! RecommendedExperienceCollectionViewCell
             cell.fetchDataFromViewModel(experience:experiences.recentExperienceViewModels[indexPath.row])
+            cell.reload = mostRecentCollectionView.reloadData
             return cell}
     }
 
@@ -87,6 +89,7 @@ extension HomeViewController: UISearchBarDelegate{
         self.present(vc, animated: true)
         
         searchBar.resignFirstResponder()
+        searchBar.text = ""
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
