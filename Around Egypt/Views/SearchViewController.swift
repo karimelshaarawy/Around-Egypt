@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         searchBar.text = searchText
         initializeCollectionView()
-        initializeHideKeyboard()
+//        initializeHideKeyboard()
     }
     func initializeCollectionView(){
         searchCollectionView.delegate = self
@@ -57,6 +58,11 @@ extension SearchViewController: UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 340, height: 200)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ExperienceMainPage(experience: experiences.experienceViewModels[indexPath.row])
+        let hostingController = UIHostingController(rootView: vc)
+        self.present(hostingController, animated: true)
     }
 }
 

@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class ExperiencesViewModel{
     var reloadRecommendedCollectionView: (() -> Void)?
 
     var reloadRecentCollectionView: (() -> Void)?
     
-
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var experienceViewModels = [ExperienceViewModel](){
         didSet{

@@ -17,32 +17,45 @@ class APIManager{
 
     private static let likeUrl = "https://aroundegypt.34ml.com/api/v2/experiences/"
     
-    
+    private static let cache = NSCache<NSString, NSData>()
+
     
     static func getRecommendedExperiences(completion: @escaping (_ experiences: [Datum]?,_ error: Error?)-> Void){
+    
         
         
-        AF.request(recommendedUrl,method: .get,parameters: nil,encoding: URLEncoding.default).response{ response in
-            guard response.error == nil else{
-                print(response.error?.localizedDescription)
-                completion(nil,response.error)
-                return
-            }
-            
-            guard let data = response.data else{
-                print("Couldn't get data from API")
-                return
-            }
-            
+        if let cachedData = cache.object(forKey: recommendedUrl as NSString){
             do {
                 let decoder = JSONDecoder()
-                let experiences = try decoder.decode(ExperiencesRequest.self, from: data)
+                let experiences = try decoder.decode(ExperiencesRequest.self, from: cachedData as Data)
                 completion(experiences.data,nil)
                 
             } catch let error{
                 completion(nil,error)
             }
-            
+        }else{
+            AF.request(recommendedUrl,method: .get,parameters: nil,encoding: URLEncoding.default).response{ response in
+                guard response.error == nil else{
+                    print(response.error?.localizedDescription)
+                    completion(nil,response.error)
+                    return
+                }
+                
+                guard let data = response.data else{
+                    print("Couldn't get data from API")
+                    return
+                }
+                cache.setObject(data as NSData, forKey: recommendedUrl as NSString)
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let experiences = try decoder.decode(ExperiencesRequest.self, from: data)
+                    completion(experiences.data,nil)
+                    
+                } catch let error{
+                    completion(nil,error)
+                }
+            }
         }
     }
  

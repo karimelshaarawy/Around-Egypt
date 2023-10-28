@@ -37,7 +37,7 @@ class RecommendedExperienceCollectionViewCell: UICollectionViewCell {
         imageView.kf.setImage(with: URL(string: experience.coverPhoto))
         locationNameLabel.text = experience.title
         likesNumberLabel.text = "\(experience.noOfLikes)"
-        likeButton.imageView?.image = experience.isLiked ? UIImage(named: "like") : UIImage(named: "unlike")
+        likeButton.imageView!.image = experience.isLiked ? UIImage(named: "like") : UIImage(named: "unlike")
         viewsLabel.text = "\(experience.viewsNumber)"
         recomendedImageView.image = experience.recommended == 1 ? UIImage(named: "star") : UIImage(named: "")
         postLike = experience.addLike

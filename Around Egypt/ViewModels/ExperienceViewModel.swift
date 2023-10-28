@@ -17,6 +17,7 @@ class ExperienceViewModel{
     var recommended: Int
     var viewsNumber: Int
     var isLiked: Bool
+    var address: String
     
     
     init(experience:Datum){
@@ -28,6 +29,7 @@ class ExperienceViewModel{
         recommended = experience.recommended ?? 0
         viewsNumber = experience.viewsNo ?? 0
         isLiked = false
+        address = (experience.city?.name ?? "" ) + ", Egypt"
     }
     
     

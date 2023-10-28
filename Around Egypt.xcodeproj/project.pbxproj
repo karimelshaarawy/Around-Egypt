@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCCCB06F2B20793866FB62D3 /* Pods_Around_Egypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */; };
 		FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */; };
 		FF691CB12AEA96A20065C6CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */; };
 		FF691CB62AEA96A20065C6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF691CB42AEA96A20065C6CF /* Main.storyboard */; };
@@ -26,9 +27,13 @@
 		FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */; };
 		FF691CE72AEC78530065C6CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE62AEC78530065C6CF /* SearchViewController.swift */; };
 		FF691CE92AED11EA0065C6CF /* LikePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE82AED11EA0065C6CF /* LikePostResponse.swift */; };
+		FF691CEB2AED2A810065C6CF /* ExperienceMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CEA2AED2A810065C6CF /* ExperienceMainPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Around_Egypt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Around Egypt.debug.xcconfig"; path = "Target Support Files/Pods-Around Egypt/Pods-Around Egypt.debug.xcconfig"; sourceTree = "<group>"; };
+		941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Around Egypt.release.xcconfig"; path = "Target Support Files/Pods-Around Egypt/Pods-Around Egypt.release.xcconfig"; sourceTree = "<group>"; };
 		FF691CAB2AEA96A20065C6CF /* Around Egypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Around Egypt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		FF691CE12AEC28C90065C6CF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF691CE62AEC78530065C6CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FF691CE82AED11EA0065C6CF /* LikePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePostResponse.swift; sourceTree = "<group>"; };
+		FF691CEA2AED2A810065C6CF /* ExperienceMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceMainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +63,38 @@
 				FF691CCA2AEBB9B20065C6CF /* Kingfisher in Frameworks */,
 				FF691CC72AEBB9960065C6CF /* Alamofire in Frameworks */,
 				FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */,
+				BCCCB06F2B20793866FB62D3 /* Pods_Around_Egypt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64BA798C2A9943111D633EA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93D3F175515558B705667757 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */,
+				941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FF691CA22AEA96A20065C6CF = {
 			isa = PBXGroup;
 			children = (
 				FF691CAD2AEA96A20065C6CF /* Around Egypt */,
 				FF691CAC2AEA96A20065C6CF /* Products */,
+				93D3F175515558B705667757 /* Pods */,
+				64BA798C2A9943111D633EA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +149,7 @@
 				FF691CD92AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.xib */,
 				FF691CE12AEC28C90065C6CF /* HomeViewController.swift */,
 				FF691CE62AEC78530065C6CF /* SearchViewController.swift */,
+				FF691CEA2AED2A810065C6CF /* ExperienceMainPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF691CC22AEA96A40065C6CF /* Build configuration list for PBXNativeTarget "Around Egypt" */;
 			buildPhases = (
+				27763FDC9B311EEC094E46DD /* [CP] Check Pods Manifest.lock */,
 				FF691CA72AEA96A20065C6CF /* Sources */,
 				FF691CA82AEA96A20065C6CF /* Frameworks */,
 				FF691CA92AEA96A20065C6CF /* Resources */,
@@ -176,7 +205,7 @@
 				};
 			};
 			buildConfigurationList = FF691CA62AEA96A20065C6CF /* Build configuration list for PBXProject "Around Egypt" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -185,9 +214,9 @@
 			);
 			mainGroup = FF691CA22AEA96A20065C6CF;
 			packageReferences = (
-				FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */,
-				FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
+				FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
 			);
 			productRefGroup = FF691CAC2AEA96A20065C6CF /* Products */;
 			projectDirPath = "";
@@ -213,6 +242,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27763FDC9B311EEC094E46DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Around Egypt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF691CA72AEA96A20065C6CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -223,6 +277,7 @@
 				FF691CDA2AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift in Sources */,
 				FF691CE02AEC24360065C6CF /* ExperiencesViewModel.swift in Sources */,
 				FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */,
+				FF691CEB2AED2A810065C6CF /* ExperienceMainPage.swift in Sources */,
 				FF691CE92AED11EA0065C6CF /* LikePostResponse.swift in Sources */,
 				FF691CCC2AEBB9E30065C6CF /* APIManager.swift in Sources */,
 				FF691CE22AEC28C90065C6CF /* HomeViewController.swift in Sources */,
@@ -370,6 +425,7 @@
 		};
 		FF691CC32AEA96A40065C6CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +454,7 @@
 		};
 		FF691CC42AEA96A40065C6CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,7 +505,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -456,7 +513,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -464,7 +521,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -477,17 +534,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		FF691CC62AEBB9960065C6CF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		FF691CC92AEBB9B20065C6CF /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
 			productName = Kingfisher;
 		};
 		FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

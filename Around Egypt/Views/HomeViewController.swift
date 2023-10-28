@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HomeViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
-        initializeHideKeyboard()
+//        initializeHideKeyboard()
         // Do any additional setup after loading the view.
     }
     func initCollectionView(){
@@ -78,6 +79,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 340, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == recommendedCollectionView{
+            let vc = ExperienceMainPage(experience: experiences.experienceViewModels[indexPath.row])
+            let hostingController = UIHostingController(rootView: vc)
+            self.present(hostingController, animated: true)
+        }else{
+            let vc = ExperienceMainPage(experience: experiences.recentExperienceViewModels[indexPath.row])
+            let hostingController = UIHostingController(rootView: vc)
+            self.present(hostingController, animated: true)        }
+
     }
 }
 
