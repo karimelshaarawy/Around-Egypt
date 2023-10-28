@@ -23,6 +23,8 @@
 		FF691CDE2AEC17680065C6CF /* ExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CDD2AEC17680065C6CF /* ExperienceViewModel.swift */; };
 		FF691CE02AEC24360065C6CF /* ExperiencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CDF2AEC24350065C6CF /* ExperiencesViewModel.swift */; };
 		FF691CE22AEC28C90065C6CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE12AEC28C90065C6CF /* HomeViewController.swift */; };
+		FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */; };
+		FF691CE72AEC78530065C6CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CE62AEC78530065C6CF /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,7 @@
 		FF691CDD2AEC17680065C6CF /* ExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewModel.swift; sourceTree = "<group>"; };
 		FF691CDF2AEC24350065C6CF /* ExperiencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperiencesViewModel.swift; sourceTree = "<group>"; };
 		FF691CE12AEC28C90065C6CF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FF691CE62AEC78530065C6CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			files = (
 				FF691CCA2AEBB9B20065C6CF /* Kingfisher in Frameworks */,
 				FF691CC72AEBB9960065C6CF /* Alamofire in Frameworks */,
+				FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,7 @@
 				FF691CD82AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift */,
 				FF691CD92AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.xib */,
 				FF691CE12AEC28C90065C6CF /* HomeViewController.swift */,
+				FF691CE62AEC78530065C6CF /* SearchViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			packageProductDependencies = (
 				FF691CC62AEBB9960065C6CF /* Alamofire */,
 				FF691CC92AEBB9B20065C6CF /* Kingfisher */,
+				FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */,
 			);
 			productName = "Around Egypt";
 			productReference = FF691CAB2AEA96A20065C6CF /* Around Egypt.app */;
@@ -178,6 +184,7 @@
 			packageReferences = (
 				FF691CC52AEBB9960065C6CF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = FF691CAC2AEA96A20065C6CF /* Products */;
 			projectDirPath = "";
@@ -208,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF691CE72AEC78530065C6CF /* SearchViewController.swift in Sources */,
 				FF691CDE2AEC17680065C6CF /* ExperienceViewModel.swift in Sources */,
 				FF691CDA2AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift in Sources */,
 				FF691CE02AEC24360065C6CF /* ExperiencesViewModel.swift in Sources */,
@@ -452,6 +460,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -464,6 +480,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF691CC82AEBB9B20065C6CF /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		FF691CE42AEC5D700065C6CF /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF691CE32AEC5D700065C6CF /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

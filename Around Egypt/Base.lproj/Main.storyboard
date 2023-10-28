@@ -182,26 +182,97 @@
                     <connections>
                         <outlet property="mostRecentCollectionView" destination="uhv-Tw-aRZ" id="eCb-Ad-tvj"/>
                         <outlet property="recommendedCollectionView" destination="Qul-hU-Ppj" id="3MG-rg-AK9"/>
+                        <outlet property="searchBar" destination="Up6-Jl-yaj" id="BA7-i1-u5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-16.030534351145036" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="OUk-Lb-Giy">
             <objects>
-                <viewController id="hRu-Ik-ojD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="hRu-Ik-ojD" customClass="SearchViewController" customModule="Around_Egypt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OhL-nQ-dpP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Try &quot;Luxor&quot; " showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI1-hK-h4C">
+                                <rect key="frame" x="54" y="59" width="290" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5ee-rw-Qr0"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNd-PH-pbd">
+                                <rect key="frame" x="17" y="80" width="25" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="eWh-Os-vQw"/>
+                                    <constraint firstAttribute="height" constant="15" id="pQb-6s-ez3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="menu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSb-il-ma6">
+                                <rect key="frame" x="356" y="78" width="20" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="NCS-YX-mLG"/>
+                                    <constraint firstAttribute="width" constant="20" id="psK-gU-uXP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="options">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="87H-2L-bcx">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xhx-5m-wgQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mFi-UQ-gP8">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Orp-7J-lvv">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tcj-5W-n1n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DSb-il-ma6" firstAttribute="top" secondItem="tcj-5W-n1n" secondAttribute="top" constant="19" id="CZT-TP-JI4"/>
+                            <constraint firstItem="vI1-hK-h4C" firstAttribute="leading" secondItem="NNd-PH-pbd" secondAttribute="trailing" constant="12" id="Cjf-25-e2T"/>
+                            <constraint firstItem="DSb-il-ma6" firstAttribute="leading" secondItem="vI1-hK-h4C" secondAttribute="trailing" constant="12" id="E0r-Ww-XaZ"/>
+                            <constraint firstItem="NNd-PH-pbd" firstAttribute="top" secondItem="tcj-5W-n1n" secondAttribute="top" constant="21" id="F1o-Ay-3Ri"/>
+                            <constraint firstItem="tcj-5W-n1n" firstAttribute="trailing" secondItem="87H-2L-bcx" secondAttribute="trailing" id="Hp9-ux-qHG"/>
+                            <constraint firstItem="NNd-PH-pbd" firstAttribute="leading" secondItem="tcj-5W-n1n" secondAttribute="leading" constant="17" id="OEp-g4-FFQ"/>
+                            <constraint firstItem="vI1-hK-h4C" firstAttribute="top" secondItem="tcj-5W-n1n" secondAttribute="top" id="YaI-DX-37b"/>
+                            <constraint firstItem="tcj-5W-n1n" firstAttribute="trailing" secondItem="DSb-il-ma6" secondAttribute="trailing" constant="17" id="n8K-1L-fK7"/>
+                            <constraint firstItem="tcj-5W-n1n" firstAttribute="bottom" secondItem="87H-2L-bcx" secondAttribute="bottom" id="rHH-sN-tVx"/>
+                            <constraint firstItem="87H-2L-bcx" firstAttribute="leading" secondItem="tcj-5W-n1n" secondAttribute="leading" id="uen-7I-T4M"/>
+                            <constraint firstItem="87H-2L-bcx" firstAttribute="top" secondItem="vI1-hK-h4C" secondAttribute="bottom" id="vRD-It-Baa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="vI1-hK-h4C" id="iN1-Tm-R1g"/>
+                        <outlet property="searchCollectionView" destination="87H-2L-bcx" id="on6-wh-J4b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gB-XS-U59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="7"/>
+            <point key="canvasLocation" x="638.93129770992368" y="6.3380281690140849"/>
         </scene>
     </scenes>
     <resources>

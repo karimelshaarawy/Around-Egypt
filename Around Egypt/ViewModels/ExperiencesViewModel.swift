@@ -11,6 +11,8 @@ class ExperiencesViewModel{
     var reloadRecommendedCollectionView: (() -> Void)?
 
     var reloadRecentCollectionView: (() -> Void)?
+    
+
 
     var experienceViewModels = [ExperienceViewModel](){
         didSet{
@@ -50,6 +52,22 @@ class ExperiencesViewModel{
                    
                    if(experiences.count > 0){
                        self?.recentExperienceViewModels = self!.changeDatumToViewModels(datum: experiences)
+                   }                }
+           }
+           
+       }
+       
+   }
+    
+    func getSearchedForExperiences(searchWord:String) {
+       APIManager.getSearchedExperiences(searchText: searchWord){[weak self] experiences, error in
+           if error != nil {
+               print(error ?? "ERROR")
+           }else{
+               if let experiences = experiences{
+                   
+                   if(experiences.count > 0){
+                       self?.experienceViewModels = self!.changeDatumToViewModels(datum: experiences)
                    }                }
            }
            
