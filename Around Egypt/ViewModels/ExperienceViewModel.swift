@@ -33,6 +33,19 @@ class ExperienceViewModel{
     }
     
     
+    init(experience:Experience){
+        id = experience.id ?? "0"
+        title = experience.title ?? ""
+        coverPhoto = experience.coverPhoto ?? ""
+        description = experience.locationDescription ?? ""
+        noOfLikes = Int(experience.noOfLikes)
+        recommended = Int(experience.recommended)
+        viewsNumber = Int(experience.viewsNumber)
+        isLiked = experience.isLiked
+        address = experience.address ?? ""
+    }
+    
+    
     func addLike(reload:@escaping()->Void)->Void{
         if(isLiked == false){
             APIManager.postLikeRequest(id: id) {[weak self] likes, error in
