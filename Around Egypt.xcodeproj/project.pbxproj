@@ -10,6 +10,8 @@
 		BCCCB06F2B20793866FB62D3 /* Pods_Around_Egypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */; };
 		FF1DFB4F2AED9841002D8680 /* Experience+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB4D2AED9841002D8680 /* Experience+CoreDataClass.swift */; };
 		FF1DFB502AED9841002D8680 /* Experience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB4E2AED9841002D8680 /* Experience+CoreDataProperties.swift */; };
+		FF1DFB592AEE6565002D8680 /* LikedLocations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB572AEE6565002D8680 /* LikedLocations+CoreDataClass.swift */; };
+		FF1DFB5A2AEE6565002D8680 /* LikedLocations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB582AEE6565002D8680 /* LikedLocations+CoreDataProperties.swift */; };
 		FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */; };
 		FF691CB12AEA96A20065C6CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */; };
 		FF691CB62AEA96A20065C6CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF691CB42AEA96A20065C6CF /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Around Egypt.release.xcconfig"; path = "Target Support Files/Pods-Around Egypt/Pods-Around Egypt.release.xcconfig"; sourceTree = "<group>"; };
 		FF1DFB4D2AED9841002D8680 /* Experience+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FF1DFB4E2AED9841002D8680 /* Experience+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FF1DFB572AEE6565002D8680 /* LikedLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedLocations+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FF1DFB582AEE6565002D8680 /* LikedLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedLocations+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FF691CAB2AEA96A20065C6CF /* Around Egypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Around Egypt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF691CAE2AEA96A20065C6CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF691CB02AEA96A20065C6CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		FF691CCD2AEBBBF00065C6CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF1DFB572AEE6565002D8680 /* LikedLocations+CoreDataClass.swift */,
+				FF1DFB582AEE6565002D8680 /* LikedLocations+CoreDataProperties.swift */,
 				FF1DFB4D2AED9841002D8680 /* Experience+CoreDataClass.swift */,
 				FF1DFB4E2AED9841002D8680 /* Experience+CoreDataProperties.swift */,
 				FF691CCE2AEBBC390065C6CF /* ExperiencesRequest.swift */,
@@ -295,6 +301,7 @@
 			files = (
 				FF691CE72AEC78530065C6CF /* SearchViewController.swift in Sources */,
 				FF691CDE2AEC17680065C6CF /* ExperienceViewModel.swift in Sources */,
+				FF1DFB5A2AEE6565002D8680 /* LikedLocations+CoreDataProperties.swift in Sources */,
 				FF691CDA2AEC10690065C6CF /* RecommendedExperienceCollectionViewCell.swift in Sources */,
 				FF691CE02AEC24360065C6CF /* ExperiencesViewModel.swift in Sources */,
 				FF691CAF2AEA96A20065C6CF /* AppDelegate.swift in Sources */,
@@ -307,6 +314,7 @@
 				FF691CB92AEA96A20065C6CF /* Around_Egypt.xcdatamodeld in Sources */,
 				FF1DFB4F2AED9841002D8680 /* Experience+CoreDataClass.swift in Sources */,
 				FF691CB12AEA96A20065C6CF /* SceneDelegate.swift in Sources */,
+				FF1DFB592AEE6565002D8680 /* LikedLocations+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

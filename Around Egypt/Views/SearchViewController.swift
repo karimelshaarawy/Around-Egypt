@@ -72,6 +72,8 @@ extension SearchViewController: UISearchBarDelegate{
         searchBar.text = ""
     }
     
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         experiences.getSearchedForExperiences(searchWord: searchBar.text ?? "")

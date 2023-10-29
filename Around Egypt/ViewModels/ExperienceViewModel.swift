@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class ExperienceViewModel: ObservableObject{
 
+    
     var id: String
     var title: String
     var coverPhoto: String
@@ -20,6 +23,7 @@ class ExperienceViewModel: ObservableObject{
     var address: String
     
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     init(experience:Datum){
         id = experience.id ?? "0"
         title = experience.title ?? ""
@@ -29,6 +33,8 @@ class ExperienceViewModel: ObservableObject{
         recommended = experience.recommended ?? 0
         viewsNumber = experience.viewsNo ?? 0
         address = (experience.city?.name ?? "" ) + ", Egypt"
+        isLiked = isLikedLocation()
+        
     }
     
     
@@ -40,8 +46,9 @@ class ExperienceViewModel: ObservableObject{
         noOfLikes = Int(experience.noOfLikes)
         recommended = Int(experience.recommended)
         viewsNumber = Int(experience.viewsNumber)
-        isLiked = experience.isLiked
         address = experience.address ?? ""
+        isLiked = isLikedLocation()
+
     }
     
     
@@ -52,12 +59,36 @@ class ExperienceViewModel: ObservableObject{
                     self!.isLiked = true
                     if let likes = likes{
                         self?.noOfLikes = likes
+                        let likedLocation = LikedLocations(context: self!.context)
+                        likedLocation.id = self?.id
+                        do {
+                            try self?.context.save()
+                        }catch{
+                            
+                        }
                         reload()
                     }
                     
                 }
             }
         }
+    }
+    
+    func isLikedLocation()->Bool{
+        var likes = [LikedLocations]()
+        do{
+            let request = LikedLocations.fetchRequest()
+            let pred = NSPredicate(format: "id == %@", id)
+            request.predicate = pred
+            likes = try context.fetch(request)
+            
+        }catch{
+            
+        }
+        if(likes.count == 0){
+            return false
+        }
+        return true
     }
     
     
