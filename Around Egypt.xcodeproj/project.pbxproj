@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BCCCB06F2B20793866FB62D3 /* Pods_Around_Egypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */; };
 		FF1DFB4F2AED9841002D8680 /* Experience+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB4D2AED9841002D8680 /* Experience+CoreDataClass.swift */; };
 		FF1DFB502AED9841002D8680 /* Experience+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB4E2AED9841002D8680 /* Experience+CoreDataProperties.swift */; };
 		FF1DFB592AEE6565002D8680 /* LikedLocations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1DFB572AEE6565002D8680 /* LikedLocations+CoreDataClass.swift */; };
@@ -35,9 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Around_Egypt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Around Egypt.debug.xcconfig"; path = "Target Support Files/Pods-Around Egypt/Pods-Around Egypt.debug.xcconfig"; sourceTree = "<group>"; };
-		941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Around Egypt.release.xcconfig"; path = "Target Support Files/Pods-Around Egypt/Pods-Around Egypt.release.xcconfig"; sourceTree = "<group>"; };
 		FF1DFB4D2AED9841002D8680 /* Experience+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FF1DFB4E2AED9841002D8680 /* Experience+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Experience+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FF1DFB572AEE6565002D8680 /* LikedLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedLocations+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -71,30 +67,12 @@
 				FF691CCA2AEBB9B20065C6CF /* Kingfisher in Frameworks */,
 				FF691CC72AEBB9960065C6CF /* Alamofire in Frameworks */,
 				FF691CE52AEC5D700065C6CF /* IQKeyboardManagerSwift in Frameworks */,
-				BCCCB06F2B20793866FB62D3 /* Pods_Around_Egypt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		64BA798C2A9943111D633EA3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2EF91707FD039C2557B04FB8 /* Pods_Around_Egypt.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		93D3F175515558B705667757 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */,
-				941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		FF1DFB512AEDAF1D002D8680 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +95,6 @@
 			children = (
 				FF691CAD2AEA96A20065C6CF /* Around Egypt */,
 				FF691CAC2AEA96A20065C6CF /* Products */,
-				93D3F175515558B705667757 /* Pods */,
-				64BA798C2A9943111D633EA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,7 +173,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF691CC22AEA96A40065C6CF /* Build configuration list for PBXNativeTarget "Around Egypt" */;
 			buildPhases = (
-				27763FDC9B311EEC094E46DD /* [CP] Check Pods Manifest.lock */,
 				FF691CA72AEA96A20065C6CF /* Sources */,
 				FF691CA82AEA96A20065C6CF /* Frameworks */,
 				FF691CA92AEA96A20065C6CF /* Resources */,
@@ -268,31 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		27763FDC9B311EEC094E46DD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Around Egypt-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF691CA72AEA96A20065C6CF /* Sources */ = {
@@ -456,7 +406,6 @@
 		};
 		FF691CC32AEA96A40065C6CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 428D67D564B393AECC7602B2 /* Pods-Around Egypt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -485,7 +434,6 @@
 		};
 		FF691CC42AEA96A40065C6CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 941B859B23C2C62A0F5F6C00 /* Pods-Around Egypt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
